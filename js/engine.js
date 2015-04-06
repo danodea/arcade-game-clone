@@ -80,7 +80,7 @@ var Engine = (function(global) {
      */
     function update(dt) {
         updateEntities(dt);
-        // checkCollisions();
+        checkCollisions();
     }
 
     /* This is called by the update function  and loops through all of the
@@ -108,7 +108,7 @@ var Engine = (function(global) {
          * for that particular row of the game level.
          */
         var rowImages = [
-                'images/water-block.png',   // Top row is water
+                'images/grass-block.png',   // Top row is grass, because it doesn't make sense to jump into water to win
                 'images/stone-block.png',   // Row 1 of 3 of stone
                 'images/stone-block.png',   // Row 2 of 3 of stone
                 'images/stone-block.png',   // Row 3 of 3 of stone
@@ -138,6 +138,14 @@ var Engine = (function(global) {
 
 
         renderEntities();
+
+        // Display win and life counts at the bottom of the game!
+        ctx.font = "48px arial";
+        ctx.textAlign = "right";
+        ctx.textBaseline = "bottom";
+        ctx.fillText('Wins: ' + winCount, 505, 590);
+        ctx.textAlign = "left";
+        ctx.fillText('Lives: ' + lifeCount, 0, 590);
     }
 
     /* This function is called by the render function and is called on each game
@@ -160,7 +168,7 @@ var Engine = (function(global) {
      * those sorts of things. It's only called once by the init() method.
      */
     function reset() {
-        // noop
+         
     }
 
     /* Go ahead and load all of the images we know we're going to need to
@@ -171,8 +179,11 @@ var Engine = (function(global) {
         'images/stone-block.png',
         'images/water-block.png',
         'images/grass-block.png',
-        'images/enemy-bug.png',
-        'images/char-boy.png'
+        'images/enemy-bug-cropped.png',
+        'images/char-boy-cropped.png',
+        'images/gem-orange-cropped.png',
+        'images/gem-blue-cropped.png',
+        'images/gem-green-cropped.png'
     ]);
     Resources.onReady(init);
 

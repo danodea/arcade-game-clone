@@ -4,6 +4,7 @@
  * a simple "caching" layer so it will reuse cached images if you attempt
  * to load the same image multiple times.
  */
+ // this is an IIFE immediately invoked function expression(google it)
 (function() {
     var resourceCache = {};
     var loading = [];
