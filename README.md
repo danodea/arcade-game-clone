@@ -1,4 +1,4 @@
-# Squash the Bugs!
+# Avoid the Bugs!
 
 Here's a simple game I made for the Udacity Front End Nanodegree program.
 
